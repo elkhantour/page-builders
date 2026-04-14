@@ -1,0 +1,26 @@
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+import tailwindcss from '@tailwindcss/vite';
+import path from "path";
+
+export default defineConfig({
+	plugins: [
+		laravel({
+			input: ['resources/css/app.css', 'resources/js/app.tsx'],
+			refresh: true,
+		}),
+		tailwindcss(),
+	],
+	server: {
+		watch: {
+			ignored: ['**/storage/framework/views/**'],
+		},
+	},
+	resolve: {
+		alias: {
+			"@components": path.resolve(__dirname, "resources/js/components"),
+			"@lib": path.resolve(__dirname, "resources/js/lib"),
+			"@layouts": path.resolve(__dirname, "resources/js/layouts"),
+		},
+	},
+});
