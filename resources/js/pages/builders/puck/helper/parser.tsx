@@ -1,3 +1,10 @@
+/**
+ *
+ * Quick and dirty AI generated JSON parser for testing purpose.
+ * In production the backend shall handle this stage.
+ *
+ */
+
 type Block = {
   type: string;
   props: Record<string, any>;

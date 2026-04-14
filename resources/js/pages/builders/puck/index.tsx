@@ -5,6 +5,7 @@ import { PUCK_CONFIG } from "./config";
 import { useState } from "react";
 import { jsonToHtml, jsonToMarkdown, PuckData } from "./helper/parser";
 import ParseResultTable from "./components/parse-result-table";
+import Container from "@components/container";
 
 // Describe the initial data
 const initialData = {};
@@ -44,7 +45,7 @@ export default function Editor() {
 			stack={["react", "php"]}
 		/>
 
-		  <div className="flex flex-col gap-12">
+		<Container className="flex flex-col gap-12">
 			<Puck
 				config={PUCK_CONFIG}
 				data={initialData}
@@ -71,6 +72,6 @@ export default function Editor() {
 			/>
 
 			<ParseResultTable data={parseResult} />
-		</div>
+		</Container>
 	</>);
 }
