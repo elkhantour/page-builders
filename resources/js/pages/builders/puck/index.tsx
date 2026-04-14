@@ -42,6 +42,7 @@ export default function Editor() {
 		<BuilderHeader
 			name="Puck Editor"
 			link="https://puckeditor.com/"
+			description="An open source library using React as front-end interface."
 			stack={["react", "php"]}
 		/>
 
