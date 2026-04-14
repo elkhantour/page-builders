@@ -1,6 +1,8 @@
 import './bootstrap';
+import Header from "@components/header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/home';
+import Puck from './pages/builders/puck';
 
 interface IRoute {
 	path: string;
@@ -11,18 +13,21 @@ const ROUTE_MAP: IRoute[] = [
 	{
 		path: "/",
 		element: <Home />,
+	},
+	{
+		path: "/builder/puck",
+		element: <Puck />,
 	}
-
-]
+];
 
 function App() {
 
 	return (
 		<main>
+			<Header />
 			<BrowserRouter>
 				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/builder/:name" element={<Home />} />
+					{ROUTE_MAP.map(route => <Route key={route.path} {...route} />)}
 				</Routes>
 			</BrowserRouter>
 		</main>

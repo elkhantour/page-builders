@@ -18,7 +18,7 @@ export default function Intro() {
 	}, []);
 
 	return (
-		<div className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-6">
+		<div className="min-h-screen bg-white text-black flex flex-col items-center justify-center px-6">
 
 			{/* Title */}
 			<h1 className="text-4xl font-bold tracking-wide">
@@ -26,11 +26,11 @@ export default function Intro() {
 			</h1>
 
 			{/* Subtitle */}
-			<p className="mt-4 text-center text-white/70 max-w-xl">
+			<p className="mt-4 text-center text-black/70 max-w-xl">
 				一個用來測試與實驗不同 PHP 頁面建構器的沙盒環境
 			</p>
 
-			<p className="mt-2 text-center text-white/50 max-w-xl text-sm">
+			<p className="mt-2 text-center text-black/50 max-w-xl text-sm">
 				A sandbox to try and experiment with different PHP based page builders
 			</p>
 
@@ -40,7 +40,7 @@ export default function Intro() {
 					<a
 						key={b.id}
 						href={b.path}
-						className="px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 transition text-sm"
+						className="px-4 py-2 rounded-md bg-black/10 hover:bg-black/20 transition text-sm"
 					>
 						{b.label}
 					</a>

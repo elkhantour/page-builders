@@ -18,6 +18,7 @@
         "vite": "^8.0.0"
     },
     "dependencies": {
+        "@puckeditor/core": "^0.21.2",
         "react": "^19.2.5",
         "react-dom": "^19.2.5",
         "react-router-dom": "^7.14.1"

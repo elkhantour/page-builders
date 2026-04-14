@@ -3,7 +3,7 @@
 <head>
     @vite('resources/js/main.tsx')
 </head>
-<body class="bg-zinc-900 text-white">
+<body class="text-black">
     <div id="root"></div>
 </body>
 </html>

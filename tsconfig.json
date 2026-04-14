@@ -14,6 +14,9 @@
 			],
 			"@pages/*": [
 				"resources/js/pages/*"
+			],
+			"@styles/*": [
+				"resources/js/styles/*"
 			]
 		}
 	}

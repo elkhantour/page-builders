@@ -31,7 +31,7 @@ export default function Header() {
 	}, []);
 
 	return (
-		<header className="fixed top-0 left-0 w-full h-14 bg-black/80 backdrop-blur-md border-b border-white/10 z-50">
+		<header className="fixed top-0 left-0 w-full h-14 bg-white/80 backdrop-blur-md border-b border-black/10 z-50">
 			<nav className="h-full flex items-center gap-6 px-6 overflow-x-auto">
 				{items.map((item) => {
 					const isActive = currentPath === item.path;
@@ -42,7 +42,7 @@ export default function Header() {
 							href={item.path}
 							className={`text-sm whitespace-nowrap transition-colors ${isActive
 								? "text-red-500 font-semibold"
-								: "text-white/80 hover:text-white"
+								: "text-black/80 hover:text-black"
 								}`}
 						>
 							{item.label}

@@ -22,6 +22,7 @@ export default defineConfig({
 			"@lib": path.resolve(__dirname, "resources/js/lib"),
 			"@layouts": path.resolve(__dirname, "resources/js/layouts"),
 			"@pages": path.resolve(__dirname, "resources/js/pages"),
+			"@styles": path.resolve(__dirname, "resources/js/styles"),
 		},
 	},
 });
