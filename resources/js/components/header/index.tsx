@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
+import AkaciaIcon from "@assets/akacia.svg?react";
 
 export default function Header() {
-	const [items, setItems] = useState([]);
+	const [items, setItems] = useState<any[]>([]);
 	const [currentPath, setCurrentPath] = useState("");
-
 
 	useEffect(() => {
 		async function load() {
@@ -18,10 +18,8 @@ export default function Header() {
 
 		load();
 
-		// Set initial path
 		setCurrentPath(window.location.pathname);
 
-		// Optional: keep in sync if user navigates without reload
 		const onPopState = () => {
 			setCurrentPath(window.location.pathname);
 		};
@@ -32,24 +30,33 @@ export default function Header() {
 
 	return (
 		<header className="fixed top-0 left-0 w-full h-14 bg-white/80 backdrop-blur-md border-b border-black/10 z-50">
-			<nav className="h-full flex items-center gap-6 px-6 overflow-x-auto">
-				{items.map((item) => {
-					const isActive = currentPath === item.path;
+			<div className="h-full flex items-center px-6 relative">
 
-					return (
-						<a
-							key={item.id}
-							href={item.path}
-							className={`text-sm whitespace-nowrap transition-colors ${isActive
-								? "text-red-500 font-semibold"
-								: "text-black/80 hover:text-black"
-								}`}
-						>
-							{item.label}
-						</a>
-					);
-				})}
-			</nav>
+				{/* LEFT: Logo */}
+				<a className="flex items-center gap-2 z-10 h-full p-2" href="/">
+					<AkaciaIcon className="h-full text-black" />
+				</a>
+
+				{/* CENTER: Navigation */}
+				<nav className="absolute left-1/2 -translate-x-1/2 flex items-center gap-6">
+					{items.map((item) => {
+						const isActive = currentPath === item.path;
+
+						return (
+							<a
+								key={item.id}
+								href={item.path}
+								className={`text-sm whitespace-nowrap transition-colors ${isActive
+										? "text-red-500 font-semibold"
+										: "text-black/70 hover:text-black"
+									}`}
+							>
+								{item.label}
+							</a>
+						);
+					})}
+				</nav>
+			</div>
 		</header>
 	);
 }
