@@ -11,6 +11,9 @@
 			],
 			"@layouts/*": [
 				"resources/js/layouts/*"
+			],
+			"@pages/*": [
+				"resources/js/pages/*"
 			]
 		}
 	}
