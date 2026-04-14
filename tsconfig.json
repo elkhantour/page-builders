@@ -3,6 +3,9 @@
 		"jsx": "react-jsx",
 		"baseUrl": ".",
 		"paths": {
+			"@*": [
+				"resources/js/*"
+			],
 			"@components/*": [
 				"resources/js/components/*"
 			],
@@ -17,6 +20,9 @@
 			],
 			"@styles/*": [
 				"resources/js/styles/*"
+			],
+			"@assets/*": [
+				"resources/js/assets/*"
 			]
 		}
 	}

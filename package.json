@@ -15,7 +15,8 @@
         "laravel-vite-plugin": "^3.0.0",
         "tailwindcss": "^4.2.2",
         "typescript": "^6.0.2",
-        "vite": "^8.0.0"
+        "vite": "^8.0.0",
+        "vite-plugin-svgr": "^5.2.0"
     },
     "dependencies": {
         "@puckeditor/core": "^0.21.2",
