@@ -22,7 +22,7 @@ export default function Intro() {
 
 			{/* Title */}
 			<h1 className="text-4xl font-bold tracking-wide">
-				PHP Builders Library
+				Page Builders Library
 			</h1>
 
 			{/* Subtitle */}
@@ -35,7 +35,8 @@ export default function Intro() {
 			</p>
 
 			{/* Builder buttons */}
-			<div className="mt-10 flex flex-wrap justify-center gap-3 max-w-3xl">
+			<h3 className="mt-10 text-2xl">Available Builders</h3>
+			<div className="mt-4 flex flex-wrap justify-center gap-3 max-w-3xl">
 				{builders.map((b) => (
 					<a
 						key={b.id}

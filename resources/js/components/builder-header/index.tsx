@@ -6,9 +6,9 @@ import LaravelIcon from "@assets/icons/laravel.svg?react";
  * Map stack keywords → icons
  */
 const stackIconMap: Record<string, React.ReactNode> = {
-	react: <ReactIcon className="w-[24px]"/>,
-	php: <PhpIcon className="w-[24px]"/>,
-	laravel: <LaravelIcon className="w-[24px]"/>,
+	react: <ReactIcon className="w-[24px]" />,
+	php: <PhpIcon className="w-[24px]" />,
+	laravel: <LaravelIcon className="w-[24px]" />,
 };
 
 /**
@@ -66,18 +66,21 @@ function BuilderDescription({ description }: { description: string }) {
  */
 type BuilderHeaderProps = {
 	name?: string;
+	link?: string;
 	description?: string;
 	stack?: string[];
 };
 
 export default function BuilderHeader({
 	name,
+	link,
 	description,
 	stack,
 }: BuilderHeaderProps) {
 	return (
 		<div className="mt-12 mb-8 w-full p-6 rounded-xl bg-zinc-100 border border-zinc-200 shadow-sm">
 			{name && <BuilderTitle name={name} />}
+			{link && <a href={link} target="_blank">{link}</a>}
 			{description && <BuilderDescription description={description} />}
 			{stack && <StackList stack={stack} />}
 		</div>

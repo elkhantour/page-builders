@@ -1,34 +1,52 @@
 import BuilderHeader from "@components/builder-header";
-import { Puck } from "@puckeditor/core";
+import { Puck, createUsePuck } from "@puckeditor/core";
 import "@puckeditor/core/puck.css";
-
-// Create Puck component config
-const config = {
-	components: {
-		HeadingBlock: {
-			fields: {
-				children: {
-					type: "text",
-				},
-			},
-			render: ({ children }) => {
-				return <h1>{children}</h1>;
-			},
-		},
-	},
-};
+import { PUCK_CONFIG } from "./config";
 
 // Describe the initial data
 const initialData = {};
 
 // Save the data to your database
-const save = (data) => {};
+const save = (data) => {
+
+
+
+};
+
+const usePuck = createUsePuck();
 
 // Render Puck editor
 export default function Editor() {
 
 	return (<>
-		<BuilderHeader name="Puck Editor" stack={["react", "php"]} />
-		<Puck config={config} data={initialData} onPublish={save} />
+		<BuilderHeader
+			name="Puck Editor"
+			link="https://puckeditor.com/"
+			stack={["react", "php"]}
+		/>
+		<Puck
+			config={PUCK_CONFIG}
+			data={initialData}
+			onPublish={save}
+			overrides={{
+				headerActions: ({ children }) => {
+					const appState = usePuck((s) => s.appState);
+
+					return (
+						<>
+							{/*<button
+								onClick={() => { save(appState.data); }}
+							>
+								Save
+							</button>
+						    */}
+
+							{/* Render default header actions, such as the default Button */}
+							{/*{children}*/}
+						</>
+					);
+				},
+			}}
+		/>
 	</>);
 }
