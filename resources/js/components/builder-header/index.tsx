@@ -1,6 +1,7 @@
 import ReactIcon from "@assets/icons/react.svg?react";
 import PhpIcon from "@assets/icons/php.svg?react";
 import LaravelIcon from "@assets/icons/laravel.svg?react";
+import JavascriptIcon from "@assets/icons/javascript.svg?react";
 import { useEffect, useState } from "react";
 
 /**
@@ -10,6 +11,7 @@ const stackIconMap: Record<string, React.ReactNode> = {
 	react: <ReactIcon className="w-[24px]" />,
 	php: <PhpIcon className="w-[24px]" />,
 	laravel: <LaravelIcon className="w-[24px]" />,
+	javascript: <JavascriptIcon className="w-[24px]" />,
 };
 
 /**

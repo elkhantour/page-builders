@@ -1,5 +1,6 @@
 import 'grapesjs/dist/css/grapes.min.css';
 import grapesjs from 'grapesjs';
+import grapejsBlocksBasic from 'grapesjs-blocks-basic';
 import { useEffect, useRef } from 'react';
 import BuilderHeader from '@components/builder-header';
 
@@ -23,7 +24,8 @@ export default function GrapesJSEditor() {
 				fromElement: true,
 				height: '80vh',
 				width: 'auto',
-				storageManager: false, // Set to false to start without persistence
+				storageManager: false, // Set to false to start without persistence,
+				plugins: [grapejsBlocksBasic],
 			});
 
 		}
