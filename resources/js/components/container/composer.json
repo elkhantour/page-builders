@@ -1,0 +1,5 @@
+{
+    "require": {
+        "hansschouten/phpagebuilder": "^0.31.0"
+    }
+}

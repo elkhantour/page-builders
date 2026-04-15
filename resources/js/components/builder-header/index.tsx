@@ -1,6 +1,7 @@
 import ReactIcon from "@assets/icons/react.svg?react";
 import PhpIcon from "@assets/icons/php.svg?react";
 import LaravelIcon from "@assets/icons/laravel.svg?react";
+import { useEffect, useState } from "react";
 
 /**
  * Map stack keywords → icons
@@ -44,7 +45,7 @@ function StackList({ stack }: { stack: string[] }) {
  */
 function BuilderTitle({ name }: { name: string }) {
 	return (
-		<h1 className="text-2xl font-semibold text-black/75 tracking-tight">
+		<h1 className="text-5xl mb-3 font-semibold text-black/75 tracking-tight">
 			{name}
 		</h1>
 	);
@@ -64,25 +65,58 @@ function BuilderDescription({ description }: { description: string }) {
 /**
  * MAIN COMPONENT
  */
-type BuilderHeaderProps = {
-	name?: string;
-	link?: string;
+interface Builder {
+	id: number;
+	label: string;
+	path: string;
 	description?: string;
+	website?: string;
 	stack?: string[];
-};
+}
 
-export default function BuilderHeader({
-	name,
-	link,
-	description,
-	stack,
-}: BuilderHeaderProps) {
+interface BuilderHeaderProps {
+	label: string;
+}
+
+export default function BuilderHeader({ label }: BuilderHeaderProps) {
+	const [builder, setBuilder] = useState<Builder | null>(null);
+
+	useEffect(() => {
+		async function load() {
+			try {
+				const res = await fetch(`/api/v1/builders/${label}`);
+				const data = await res.json();
+				setBuilder(data);
+			} catch (err) {
+				console.error("Failed to load builder:", err);
+			}
+		}
+
+		load();
+	}, [label]);
+
+	if (!builder) return null;
+
 	return (
-		<div className="mt-12 mb-8 w-full p-6 rounded-xl bg-zinc-100 border border-zinc-200 shadow-sm">
-			{name && <BuilderTitle name={name} />}
-			{link && <a href={link} target="_blank">{link}</a>}
-			{description && <BuilderDescription description={description} />}
-			{stack && <StackList stack={stack} />}
+		<div className="mt-12 mb-8 w-full p-6 bg-zinc-100 border border-zinc-200 shadow-sm">
+			{builder.label && <BuilderTitle name={builder.label} />}
+
+			{builder.website && (
+				<a
+					href={builder.website}
+					target="_blank"
+					rel="noopener noreferrer"
+					className="text-blue-600 hover:underline text-sm"
+				>
+					{builder.website}
+				</a>
+			)}
+
+			{builder.description && (
+				<BuilderDescription description={builder.description} />
+			)}
+
+			{builder.stack && <StackList stack={builder.stack} />}
 		</div>
 	);
 }

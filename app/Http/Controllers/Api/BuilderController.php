@@ -3,12 +3,15 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Services\BuilderService;
+use App\Services\BuilderRegistryService;
 
+/**
+ * Handles the JSON response used during API call.
+ */
 class BuilderController extends Controller
 {
-    public function index(BuilderService $service)
+    public function show(string $label, BuilderRegistryService $service)
     {
-        return response()->json($service->all());
+        return response()->json($service->findByLabel($label));
     }
 }

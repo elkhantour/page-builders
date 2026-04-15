@@ -3,6 +3,7 @@ import Header from "@components/header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/home';
 import Puck from './pages/builders/puck';
+import GrapesJSEditor from '@pages/builders/grapesjs';
 
 interface IRoute {
 	path: string;
@@ -17,6 +18,10 @@ const ROUTE_MAP: IRoute[] = [
 	{
 		path: "/builder/puck",
 		element: <Puck />,
+	},
+	{
+		path: "/builder/grapesjs",
+		element: <GrapesJSEditor />,
 	}
 ];
 

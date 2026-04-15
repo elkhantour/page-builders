@@ -39,14 +39,9 @@ export default function Editor() {
 	});
 
 	return (<>
-		<BuilderHeader
-			name="Puck Editor"
-			link="https://puckeditor.com/"
-			description="An open source library using React as front-end interface."
-			stack={["react", "php"]}
-		/>
+		<BuilderHeader label="Puck Editor" />
 
-		<Container className="flex flex-col gap-12">
+		<div className="flex flex-col gap-12">
 			<Puck
 				config={PUCK_CONFIG}
 				data={initialData}
@@ -72,7 +67,9 @@ export default function Editor() {
 				}}
 			/>
 
-			<ParseResultTable data={parseResult} />
-		</Container>
+			<Container>
+				<ParseResultTable data={parseResult} />
+			</Container>
+		</div>
 	</>);
 }
