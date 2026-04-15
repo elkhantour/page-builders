@@ -19,6 +19,7 @@
         "vite-plugin-svgr": "^5.2.0"
     },
     "dependencies": {
+        "@craftjs/core": "^0.2.12",
         "@puckeditor/core": "^0.21.2",
         "grapesjs": "^0.22.15",
         "grapesjs-blocks-basic": "^1.0.2",

@@ -3,6 +3,7 @@ import grapesjs from 'grapesjs';
 import grapejsBlocksBasic from 'grapesjs-blocks-basic';
 import { useEffect, useRef } from 'react';
 import BuilderHeader from '@components/builder-header';
+import Container from '@components/container';
 
 /**
  * GrapeJS Editor Vanilla JS implementation.
@@ -35,7 +36,9 @@ export default function GrapesJSEditor() {
 	return (
 		<>
 			<BuilderHeader label="GrapesJS" />
-			<div ref={ref} id="gjs"></div>
+			<Container>
+				<div ref={ref} id="gjs"></div>
+			</Container>
 		</>);
 
 }

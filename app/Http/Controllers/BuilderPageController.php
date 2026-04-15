@@ -24,6 +24,7 @@ class BuilderPageController extends Controller
             'puck' => view('app'),
             'grapesjs' => view('app'),
             'vvvebjs' => view('app'),
+            'craftjs' => view('app'),
             'phpagebuilder' => view('phpagebuilder', [
                 'builderContent' => $phpPageBuilder->handle(),
             ]),
