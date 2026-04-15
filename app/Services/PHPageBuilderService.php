@@ -14,7 +14,7 @@ class PHPageBuilderService
 
     public function __construct()
     {
-        //$config = config('pagebuilder'); // Laravel config system
+        // $config = config('pagebuilder'); // Laravel config system
         //$this->builder = new PHPageBuilder($config);
         //$this->builder = app('phpPageBuilder');
                 
@@ -22,6 +22,6 @@ class PHPageBuilderService
 
     public function handle()
     {
-        // return $this->builder->handleRequest();
+        //    return $this->builder->handleRequest();
     }
 }

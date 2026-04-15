@@ -38,6 +38,14 @@ class BuilderRegistryService
                 'website' => 'https://grapesjs.com/docs/#what-is-grapesjs',
                 'stack' => ['javascript', 'react'],
             ],
+                        [
+                'id' => 3,
+                'label' => 'Vvvebjs',
+                'path' => '/builder/vvvebjs',
+                'description' => 'A JS based block editor',
+                'website' => 'https://github.com/givanz/Vvvebjs',
+                'stack' => ['javascript'],
+            ],
         ];
     }
 

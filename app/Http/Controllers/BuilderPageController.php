@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\PHPageBuilderService;
+use App\Services\VvvebJsService;
 use Illuminate\Http\Response;
 
 
@@ -15,11 +16,14 @@ use Illuminate\Http\Response;
  */
 class BuilderPageController extends Controller
 {
-    public function show(string $name, PHPageBuilderService $phpPageBuilder)
+    public function show(string $name,
+                         PHPageBuilderService $phpPageBuilder,
+                         VvvebJsService $vvveb)
     {
         return match ($name) {
             'puck' => view('app'),
             'grapesjs' => view('app'),
+            'vvvebjs' => view('app'),
             'phpagebuilder' => view('phpagebuilder', [
                 'builderContent' => $phpPageBuilder->handle(),
             ]),
