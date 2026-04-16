@@ -29,6 +29,32 @@ export default function GrapesJSEditor() {
 				plugins: [grapejsBlocksBasic],
 			});
 
+			editor.on('load', () => {
+				const blockManager = editor.BlockManager;
+
+				// See all registered block IDs
+				console.log(
+					'Available blocks:',
+					blockManager.getAll().map((block) => block.get('id'))
+				);
+
+				const elements = [
+					"map",
+					"text",
+					"link",
+					"image",
+					"video"
+				];
+
+				elements.map(name => {
+					const block = blockManager.get(name);
+					if (block) {
+						editor.addComponents(block.get('content'));
+					}
+
+				});
+			});
+
 		}
 
 	}, [ref.current]);

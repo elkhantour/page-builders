@@ -7,6 +7,7 @@ import { ButtonBlock } from "./components/ButtonBlock";
 import { Toolbox } from "./components/Toolbox";
 import { SettingsPanel } from "./components/SettingsPanel";
 import { Container } from "./components/Container";
+import { DeleteHotkey } from "./components/DeleteHotkey";
 
 export default function CraftJS() {
 
@@ -21,6 +22,7 @@ export default function CraftJS() {
 						ButtonBlock,
 					}}
 				>
+					<DeleteHotkey />
 					<Toolbox />
 
 					<main className="flex-1 overflow-auto p-6">
