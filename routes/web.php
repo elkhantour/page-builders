@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BuilderPageController;
 use App\Http\Controllers\VvvebJsController;
 
 Route::get('/', function () {
