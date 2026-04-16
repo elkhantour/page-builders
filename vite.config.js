@@ -27,6 +27,7 @@ export default defineConfig({
 			"@pages": path.resolve(__dirname, "resources/js/pages"),
 			"@styles": path.resolve(__dirname, "resources/js/styles"),
 			"@assets": path.resolve(__dirname, "resources/js/assets"),
+			"@hooks": path.resolve(__dirname, "resources/js/hooks"),
 		},
 	},
 });

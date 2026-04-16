@@ -4,6 +4,7 @@ import LaravelIcon from "@assets/icons/laravel.svg?react";
 import JavascriptIcon from "@assets/icons/javascript.svg?react";
 import BootstrapIcon from "@assets/icons/bootstrap.svg?react";
 import { useEffect, useState } from "react";
+import { useTitle } from "@hooks/title";
 
 /**
  * Map stack keywords → icons
@@ -84,6 +85,8 @@ interface BuilderHeaderProps {
 
 export default function BuilderHeader({ label }: BuilderHeaderProps) {
 	const [builder, setBuilder] = useState<Builder | null>(null);
+
+	useTitle(label);
 
 	useEffect(() => {
 		async function load() {

@@ -34,7 +34,7 @@ class BuilderRegistryService
                 'id' => 2,
                 'label' => 'Vvvebjs',
                 'path' => '/builder/vvvebjs',
-                'description' => 'A JS based block editor',
+                'description' => 'A JS based block editor.',
                 'website' => 'https://github.com/givanz/Vvvebjs',
                 'stack' => ['javascript', 'php', 'bootstrap'],
             ],
@@ -42,19 +42,19 @@ class BuilderRegistryService
                 'id' => 3,
                 'label' => 'Craft.js',
                 'path' => '/builder/craftjs',
-                'description' => 'A React based block editor',
+                'description' => 'A highly customizable React based block editor, providing components and internal logics to build the whole interface from sratch.',
                 'website' => 'https://craft.js.org/',
                 'stack' => ['react'],
             ],
-            
+
         ];
     }
 
     public function findByLabel($label)
     {
-        if($label == 'all')
+        if ($label == 'all')
             return $this->all();
-        
+
         foreach ($this->all() as $builder) {
             if ($builder['label'] === $label) {
                 return $builder;

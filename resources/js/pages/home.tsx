@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import visual from "@assets/builder-main.png";
 import Container from "@components/container";
+import { useTitle } from "@hooks/title";
 
 export default function Home() {
 
 	const [builders, setBuilders] = useState([]);
 
+	useTitle("Home");
 	useEffect(() => {
 		async function load() {
 			try {
