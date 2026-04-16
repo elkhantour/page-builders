@@ -24,14 +24,6 @@ class BuilderRegistryService
             ],
             [
                 'id' => 1,
-                'label' => 'PHPageBuilder',
-                'path' => '/builder/phpagebuilder',
-                'description' => 'PHPagebuilder is a drag and drop pagebuilder to manage pages in any PHP project.',
-                'website' => 'https://github.com/HansSchouten/PHPageBuilder',
-                'stack' => ['php', 'bootstrap'],
-            ],
-            [
-                'id' => 2,
                 'label' => 'GrapesJS',
                 'path' => '/builder/grapesjs',
                 'description' => 'A JS based block editor, provide a vanilla JS or a React support.',
@@ -39,7 +31,7 @@ class BuilderRegistryService
                 'stack' => ['javascript', 'react'],
             ],
             [
-                'id' => 3,
+                'id' => 2,
                 'label' => 'Vvvebjs',
                 'path' => '/builder/vvvebjs',
                 'description' => 'A JS based block editor',
@@ -47,7 +39,7 @@ class BuilderRegistryService
                 'stack' => ['javascript', 'php', 'bootstrap'],
             ],
             [
-                'id' => 4,
+                'id' => 3,
                 'label' => 'Craft.js',
                 'path' => '/builder/craftjs',
                 'description' => 'A React based block editor',

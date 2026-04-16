@@ -1,6 +1,6 @@
 <?php
 
-// Extracted from: https://github.com/HansSchouten/PHPageBuilder/blob/master/config/config.example.php
+// Extracted from: https://github.com/HansSchouten/Laravel-Pagebuilder/blob/master/config/pagebuilder.php
 
 return [
     /*
@@ -9,16 +9,12 @@ return [
      |--------------------------------------------------------------------------
      |
      | General settings for configuring the PageBuilder.
-     | If you install phpb with Composer, general.assets_url line must be:
-     | 'assets_url' => '/vendor/hansschouten/phpagebuilder/dist',
-     | else
-     | 'assets_url' => '/assets'
      |
      */
     'general' => [
-        'base_url' => 'http://localhost',
+        'base_url' => env('APP_URL'),
         'language' => 'en',
-        'assets_url' => '/vendor/hansschouten/phpagebuilder/dist',
+        'assets_url' => '/assets',
         'uploads_url' => '/uploads'
     ],
 
@@ -31,18 +27,18 @@ return [
      |
      */
     'storage' => [
-        'use_database' => false,
+        'use_database' => true,
         'database' => [
             'driver'    => 'mysql',
-            'host'      => 'localhost',
-            'database'  => '',
-            'username'  => '',
-            'password'  => '',
+            'host'      => env('DB_HOST').':'.env('DB_PORT',3306),
+            'database'  => env('DB_DATABASE'),
+            'username'  => env('DB_USERNAME'),
+            'password'  => env('DB_PASSWORD'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
+            'prefix'    => 'pagebuilder__',
         ],
-        'uploads_folder' => __DIR__ . '/uploads'
+        'uploads_folder' => storage_path('app/pagebuilder/uploads')
     ],
 
     /*
@@ -151,7 +147,7 @@ return [
      */
     'theme' => [
         'class' => PHPageBuilder\Theme::class,
-        'folder' => __DIR__ . '/themes',
+        'folder' => base_path('themes'),
         'folder_url' => '/themes',
         'active_theme' => 'demo'
     ],
@@ -165,7 +161,8 @@ return [
      |
      */
     'router' => [
-        'class' => PHPageBuilder\Modules\Router\DatabasePageRouter::class
+        'class' => PHPageBuilder\Modules\Router\DatabasePageRouter::class,
+        'use_router' => true
     ],
 
     /*

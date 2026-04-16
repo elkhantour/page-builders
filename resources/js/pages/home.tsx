@@ -34,11 +34,11 @@ export default function Home() {
 
 				{/* Subtitle */}
 				<p className="mt-4 text-black/70 max-w-xl">
-					一個用來測試與實驗不同 PHP 頁面建構器的沙盒環境
+					一個用來測試與實驗不同頁面建構器的沙盒環境
 				</p>
 
 				<p className="mt-2 text-black/50 max-w-xl text-sm">
-					A sandbox to try and experiment with different PHP based page builders
+					A sandbox to try and experiment with different page builders
 				</p>
 
 				{/* Builder buttons */}

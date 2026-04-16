@@ -8,7 +8,9 @@ Route::get('/', function () {
     return view('app');
 });
 
-Route::get('/builder/{name}', [BuilderPageController::class, 'show']);
+Route::get('/builder/{name}', function () {
+    return view('app');
+});
 
 /**
  * The Vvvebjs is in itself a quite complex and bundled environment with

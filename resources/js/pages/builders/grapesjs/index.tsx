@@ -32,15 +32,10 @@ export default function GrapesJSEditor() {
 			editor.on('load', () => {
 				const blockManager = editor.BlockManager;
 
-				// See all registered block IDs
-				console.log(
-					'Available blocks:',
-					blockManager.getAll().map((block) => block.get('id'))
-				);
-
+				// Add mock elements to the editor as example
 				const elements = [
-					"map",
 					"text",
+					"map",
 					"link",
 					"image",
 					"video"
@@ -48,10 +43,8 @@ export default function GrapesJSEditor() {
 
 				elements.map(name => {
 					const block = blockManager.get(name);
-					if (block) {
+					if (block)
 						editor.addComponents(block.get('content'));
-					}
-
 				});
 			});
 
